@@ -15,9 +15,9 @@
 # by all species). This relies upon the correct prediction of the protein
 # name by ncbi - use of the sequence data itself may be more accurate.
 
-
-phrase="ribosomal protein"
-for file in $1; do
+files=$1
+phrase=$2
+for file in $files; do
   echo $file
   gunzip -c $file | grep "$phrase"
 done
